@@ -50,3 +50,33 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 		StringMap: stringMap,
 	})
 }
+
+// Naturale is the natural campsite page handler
+func (m *Repository) Naturale(w http.ResponseWriter, r *http.Request) {
+	// send the data to the template
+	render.RenderTemplate(w, "naturale.page.tmpl", &models.TemplateData{})
+}
+
+// Cozy is the cozy suite page handler
+func (m *Repository) Cozy(w http.ResponseWriter, r *http.Request) {
+	// send the data to the template
+	render.RenderTemplate(w, "cozy.page.tmpl", &models.TemplateData{})
+}
+
+// Reservation is the reservation page handler
+func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+	// send the data to the template
+	render.RenderTemplate(w, "make-reservation.page.tmpl", &models.TemplateData{})
+}
+
+// Contact is the contact page handler
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	// send the data to the template
+	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
+}
+
+// Availability is the search availability page handler
+func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
+	// send the data to the template
+	render.RenderTemplate(w, "search-availability.page.tmpl", &models.TemplateData{})
+}

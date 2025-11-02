@@ -1,0 +1,65 @@
+{{template "base" .}}
+
+{{define "content"}}
+    	
+		<div class="container">
+		
+			<div class="row">
+				<div class="col text-center">
+					<img src="/static/images/campsite.jpg" class="img-fluid img-thumbnail room-image"> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<h1 class="text-center mt-4">Natural Camping Site</h1>
+					<p>
+						Nature’s beloved home, at your service — Yui’s Ranch is a cozy bed and breakfast 
+						nestled amid rolling green hills and gentle morning mist, where the air smells 
+						faintly of wildflowers and freshly baked bread. The warmth of the wooden interiors and the crackling 
+						fireplace instantly makes you feel like you’ve come home after a long journey. Yui, ever cheerful and 
+						attentive, welcomes every guest with the kind of sincerity that turns a simple stay into a heartfelt memory. 
+						Whether you’re enjoying her homemade pancakes at sunrise, watching the horses graze under the golden light of dusk, 
+						or simply sipping tea on the porch while cicadas hum softly in the distance, Yui’s Ranch offers not just rest — but 
+						a rare, genuine sense of peace.
+					</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col text-center">
+					
+					<a id="search-avail-button" href="#" class="btn btn-success">Check Availability</a>
+					
+				</div>
+			</div>
+			
+		</div>
+{{end}}
+
+
+{{define "js"}}
+	<script>
+				document.getElementById("search-avail-button").addEventListener("click", function(){
+				//attention.toast({msg: "Hello, world."});
+
+				let html = `
+				<form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
+					<div class="row">
+						<div class="col">
+							<div class="row" id="reservation-date-modal">
+								<div class="col">
+									<input disabled required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
+								</div>
+								<div class="col">
+									<input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				`
+				attention.custom({msg: html, title:"Choose your dates"});
+			});
+	</script>
+
+{{end}}
