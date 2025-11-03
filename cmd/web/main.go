@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/affanwhat/bookings/pkg/config"
-	"github.com/affanwhat/bookings/pkg/handlers"
-	"github.com/affanwhat/bookings/pkg/render"
+	"github.com/affanwhat/bookings/internal/config"
+	"github.com/affanwhat/bookings/internal/handlers"
+	"github.com/affanwhat/bookings/internal/render"
 	"github.com/alexedwards/scs/v2"
 )
 
