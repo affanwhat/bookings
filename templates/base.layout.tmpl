@@ -86,6 +86,7 @@
     {{block "js" .}}
 
     {{end}}
+	
 
 
 		<script>
@@ -123,6 +124,20 @@
 					text: msg,
 				})
 			};
+
+			
+			{{with .Error}}
+			notify("{{.}}", "error")
+			{{end}}
+
+			{{with .Flash}}
+			notify("{{.}}", "flash")
+			{{end}}
+
+			{{with .Warning}}
+			notify("{{.}}", "warning")
+			{{end}}
+
 
 
 			function notifyModal(title, text, icon, confirmButton){
